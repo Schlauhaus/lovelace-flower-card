@@ -1,0 +1,20 @@
+{
+  "name": "lovelace-flower-card",
+  "version": "1.0.0",
+  "description": "MiFlora / Home-Assistant card",
+  "scripts": {
+    "build": "webpack",
+    "build-data": "python3 convert.py MiFloraDB/PlantDB_5335_U0.csv > src/data.js",
+    "watch": "webpack --watch --mode=development",
+    "update-card-tools": "npm uninstall card-tools && npm install thomasloven/lovelace-card-tools"
+  },
+  "author": "Yolanda van der Vegt",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "card-tools": "github:thomasloven/lovelace-card-tools"
+  }
+}

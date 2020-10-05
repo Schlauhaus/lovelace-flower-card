@@ -9,40 +9,20 @@ Also see my detailed post in this same thread at https://community.home-assistan
 I looked into several forks of the original card https://github.com/thomasloven/lovelace-flower-card. Some forks were very interesting and I edited several of those source codes changes into my own new fork. Credits to those original authors.
 
 ### Dependencies
-1. lovelace-card-tools (https://github.com/thomasloven/lovelace-card-tools)
-2. MiFlora database (PlantDB_5335_U0.csv)
-3. Plant sensor (https://www.home-assistant.io/integrations/plant)
+1. Plant sensor (https://www.home-assistant.io/integrations/plant)
 
 ### Instructions
 
 1: Install the card
+  * Ensure HACS is installed.
+  * Go to Community -> Frontend -> press the three dots (top right corner of screen) -> Custom repositories and add the following information:
+  Add custom repository URL: https://github.com/Yolandavdvegt/lovelace-flower-card
+  Category: Lovelace
+  Press add.
 
- 1a: Go to Configuration -> Lovelace Dashboards -> Resources -> press the + (lower right corner of screen) and add the following information:
+Press on the just added `Lovelace Flower Card` and press `Install this repository in HACS`
 
-```yaml
-  Url: /local/lovelace-flower-card/flower-card.js
-  Resource type: JavaScript Module
-```
-![image](https://user-images.githubusercontent.com/45675902/80322223-ebd41880-8823-11ea-992d-7070d4197f8b.png)
-
- 1b: Press *Create* afterwards to add the new resource.
-
-2: Get CSV database file (https://github.com/khronimo/MiFloraDB)
-
-3: Run `python3 convert.py DBFileName.csv > data.js`
-
- 3a: Execute convert.py on a Linux machine (not Windows)
-
- 3b: Check data.js via cli command: file data.js. Correct is:
-```
-data.js: ASCII text, with very long lines
-```
-
-4: Move `data.js` to `www/lovelace-flower-card/data/data.js`
-
-5: Get flower images and extract to `www/lovelace-flower-card/data/Images`
-
-6: Setup card
+2: Setup card
 
 ```yaml
 type: custom:flower-card
@@ -52,14 +32,16 @@ species: "tulipa 'hollandia'"
 
 To get a list of the available species run `python3 convert.py DBFilename.csv species`. The value you want is the one after the colon. Enter it exactly like it says, with quotes and all.
 
-7: configuration.yaml
+3: Place an jpg image with the name of the species in the `/config/www/images/plants` directory. Example: `/local/images/plants/tulipa 'hollandia.jpg`. Images of species can be found in the https://github.com/khronimo/MiFloraDB repository readme.
+
+4: configuration.yaml
 
 Add the following to configuration.yaml (bottom of this file)
 ```plant: !include plants.yaml```
 
 I do this to separate my config files.
 
-8: plants.yaml
+5: plants.yaml
 
 Create, edit and add the following to plants.yaml. Change accordingly. Repeat this section for other plants. Separate each section with a blank line.
 ```
