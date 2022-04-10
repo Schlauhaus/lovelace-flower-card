@@ -117,7 +117,7 @@
       `};return l`
     <ha-card>
       <div class="header" @click="${()=>t(this.stateObj.entity_id)}">
-        <img src="/local/images/plants/${this.friendly_name}.jpg">
+        <img src="/local/images/plants/${this.entity_id}.jpg">
         <span id="name"> ${this.stateObj.attributes.friendly_name} </span>
         <span id="species"> ${i[0]} </span>
       </div>
