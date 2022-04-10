@@ -32,7 +32,7 @@ species: "tulipa 'hollandia'"
 
 To get a list of the available species run `python3 convert.py DBFilename.csv species`. The value you want is the one after the colon. Enter it exactly like it says, with quotes and all.
 
-3: Place an jpg image with the name of the species in the `/config/www/images/plants` directory. Example: `/local/images/plants/tulipa 'hollandia'.jpg`. Images of species can be found in the https://github.com/khronimo/MiFloraDB repository readme.
+3: Place an jpg image with the name of the entity id in the `/config/www/images/plants` directory. Example: `/local/images/plants/tulipa balkon.jpg`. Images of species can be found in the https://github.com/khronimo/MiFloraDB repository readme.
 
 4: configuration.yaml
 
